@@ -1,4 +1,4 @@
-from zooAnimales.animal import Animal
+from animal import Animal
 
 class Pez(Animal):
     
@@ -11,25 +11,25 @@ class Pez(Animal):
         super().__init__(nombre, edad, habitat, genero)
         self._colorEscamas = colorEscamas
         self._cantidadAletas = cantidadAletas
-        Pez.listado.append(self)
+        Pez._listado.append(self)
 
     @classmethod
     def setListado(cls, listado):
         
-        cls.listado = listado 
+        cls._listado = listado 
     
     @classmethod
     def getListado(cls):
         
-        return cls.listado
+        return cls._listado
     @classmethod
     def cantidadPeces(cls):
         
-        return len(Pez.listado)
+        return len(Pez._listado)
     
     def setColorPiel(self, colorEscamas):
         
-        self._colrEscamas = colorEscamas
+        self._colorEscamas = colorEscamas
         
     def getColorEscamas(self):
         
@@ -43,19 +43,20 @@ class Pez(Animal):
         
         return self._cantidadAletas
     
-    def movimiento(self):
+    @staticmethod
+    def movimiento():
         
         return "nadar"
     
     @classmethod
-    def crearSalmon(nombre, edad, genero):
+    def crearSalmon(cls, nombre, edad, genero):
         
         nuevoSalmon = Pez(nombre, edad, "selva", genero, "rojo", True )
         Pez.salmones+=1
         return nuevoSalmon
         
     @classmethod
-    def crearBacalao(nombre, edad, genero):
+    def crearBacalao(cls,nombre, edad, genero):
         
         nuevoBacalao = Pez(nombre, edad, "selva", genero, "negro y amarillo", False)
         Pez.bacalaos+=1

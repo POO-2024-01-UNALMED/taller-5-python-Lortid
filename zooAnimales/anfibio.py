@@ -1,3 +1,6 @@
+import sys
+sys.path.append(r'C:\Users\JAIME\OneDrive\Escritorio\taller-5-python-Lortid\zooAnimales')
+
 from animal import Animal
 class Anfibio(Animal):
     
@@ -9,22 +12,22 @@ class Anfibio(Animal):
         super().__init__(nombre, edad, habitat, genero)
         self._colorPiel = colorPiel
         self._venenoso = venenoso
-        Anfibio.listado.append(self)
+        Anfibio._listado.append(self)
 
     @classmethod
     def setListado(cls, listado):
         
-        cls.listado = listado 
+        cls._listado = listado 
     
     @classmethod
     def getListado(cls):
         
-        return cls.listado
+        return cls._listado
     
     @classmethod
     def cantidadAnfibios(cls):
         
-        return len(Anfibio.listado)
+        return len(Anfibio._listado)
     
     def setColorPiel(self, colorPiel):
         
@@ -42,19 +45,20 @@ class Anfibio(Animal):
         
         return self._venenoso
     
-    def movimiento(self):
+    @staticmethod
+    def movimiento():
         
         return "saltar"
     
     @classmethod
-    def crearRana(nombre, edad, genero):
+    def crearRana(cls, nombre, edad, genero):
         
         nuevaRana = Anfibio(nombre, edad, "selva", genero, "rojo", True )
         Anfibio.ranas+=1
         return nuevaRana
         
     @classmethod
-    def crearSalamandra(nombre, edad, genero):
+    def crearSalamandra(cls, nombre, edad, genero):
         
         nuevaSalamandra = Anfibio(nombre, edad, "selva", genero, "negro y amarillo", False)
         Anfibio.salamandras+=1
