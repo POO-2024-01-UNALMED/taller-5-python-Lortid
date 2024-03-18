@@ -1,13 +1,11 @@
 from animal import Animal
-
 class Anfibio(Animal):
     
     ranas = 0
     salamandras = 0
-    listado = []
+    _listado = []
     
     def __init__(self, nombre = None, edad = 0, habitat = None, genero = None, colorPiel = None, venenoso = False ) :
-        
         super().__init__(nombre, edad, habitat, genero)
         self._colorPiel = colorPiel
         self._venenoso = venenoso
@@ -23,7 +21,8 @@ class Anfibio(Animal):
         
         return cls.listado
     
-    def cantidadAnfibio(self):
+    @classmethod
+    def cantidadAnfibios(cls):
         
         return len(Anfibio.listado)
     

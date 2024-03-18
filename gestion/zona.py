@@ -1,12 +1,10 @@
-from zoologico import Zologico
-
 class Zona:
     
-    def __init__(self, nombre = None, zoo = None, animales = None):
+    def __init__(self, nombre = None, zoo = None ):
         
         self._nombre = nombre
         self._zoo = zoo
-        self._animales = animales
+        self._animales = []
     
     def setNombre(self, nombre):
         

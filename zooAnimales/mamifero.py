@@ -1,10 +1,9 @@
 from animal import Animal
-
 class Mamifero(Animal):
     
     caballos = 0
     leones = 0
-    listado = []
+    _listado = []
     
     def __init__(self, nombre = None, edad = 0, habitat = None, genero = None, pelaje = False, patas = 0 ) :
         
@@ -22,8 +21,8 @@ class Mamifero(Animal):
     def getListado(cls):
         
         return cls.listado
-    
-    def cantidadCaballos(self):
+    @classmethod
+    def cantidadMamiferos(cls):
         
         return len(Mamifero.listado)
     
