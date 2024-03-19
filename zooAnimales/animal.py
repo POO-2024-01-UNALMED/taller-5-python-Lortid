@@ -1,6 +1,3 @@
-import sys
-sys.path.append(r'C:\Users\JAIME\OneDrive\Escritorio\taller-5-python-Lortid')
-
 import zooAnimales
 class Animal:
     

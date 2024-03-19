@@ -1,7 +1,4 @@
-import sys
-sys.path.append(r'C:\Users\JAIME\OneDrive\Escritorio\taller-5-python-Lortid\zooAnimales')
-
-from animal import Animal
+from zooAnimales.animal import Animal
 class Anfibio(Animal):
     
     ranas = 0
